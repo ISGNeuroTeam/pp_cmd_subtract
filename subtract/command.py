@@ -5,12 +5,12 @@ from pp_exec_env.base_command import BaseCommand, Syntax
 
 class SubtractCommand(BaseCommand):
     """
-     Make subtraction of two columns of the dataframe
-     a, b - columns must be subtracted
-     | subtract a b - creates a new df
+    Make subtraction of two columns of the dataframe
+    a, b - columns must be subtracted
+    | subtract a b - creates a new df
 
-     | subtract a b as c - creates new column "c" in the old df
-     """
+    | subtract a b as c - creates new column "c" in the old df
+    """
 
     syntax = Syntax(
         [
@@ -40,11 +40,11 @@ class SubtractCommand(BaseCommand):
             self.log_progress("Subtraction is complete.", stage=1, total_stages=2)
             return df
         else:
-            addition_df = pd.DataFrame(
+            new_df = pd.DataFrame(
                 {
                     f"subtract_{first_column}_{second_column}": df[first_column].values
-                                                           - df[second_column].values
+                    - df[second_column].values
                 }
             )
             self.log_progress("Subtraction is complete.", stage=1, total_stages=2)
-            return addition_df
+            return new_df
