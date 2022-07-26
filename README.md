@@ -1,6 +1,12 @@
 # pp_cmd_subtract
 Postprocessing command "subtract"
 
+Make subtraction of two columns of the dataframe
+
+a, b - columns or numbers must be subtracted
+
+| subtract a b - creates a new df
+
 Usage example:
 `... | subtract a b as c`
 
